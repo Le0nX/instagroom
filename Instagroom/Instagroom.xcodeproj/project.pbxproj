@@ -15,6 +15,7 @@
 		14EB0395221872C500969E09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14EB0393221872C500969E09 /* LaunchScreen.storyboard */; };
 		14EB03A0221872C600969E09 /* InstagroomTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB039F221872C600969E09 /* InstagroomTests.swift */; };
 		14EB03AB221872C600969E09 /* InstagroomUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB03AA221872C600969E09 /* InstagroomUITests.swift */; };
+		14EB03DB221A50BC00969E09 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EB03DA221A50BC00969E09 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		14EB03A6221872C600969E09 /* InstagroomUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstagroomUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		14EB03AA221872C600969E09 /* InstagroomUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagroomUITests.swift; sourceTree = "<group>"; };
 		14EB03AC221872C600969E09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14EB03DA221A50BC00969E09 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		14EB0386221872C300969E09 /* Instagroom */ = {
 			isa = PBXGroup;
 			children = (
+				14EB03D9221A509C00969E09 /* Utils */,
 				14EB0387221872C300969E09 /* AppDelegate.swift */,
 				14EB0389221872C300969E09 /* ViewController.swift */,
 				14EB038B221872C300969E09 /* Main.storyboard */,
@@ -126,6 +129,14 @@
 				14EB03AC221872C600969E09 /* Info.plist */,
 			);
 			path = InstagroomUITests;
+			sourceTree = "<group>";
+		};
+		14EB03D9221A509C00969E09 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				14EB03DA221A50BC00969E09 /* Extensions.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,6 +273,7 @@
 				14EB0390221872C300969E09 /* Instagroom.xcdatamodeld in Sources */,
 				14EB038A221872C300969E09 /* ViewController.swift in Sources */,
 				14EB0388221872C300969E09 /* AppDelegate.swift in Sources */,
+				14EB03DB221A50BC00969E09 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
