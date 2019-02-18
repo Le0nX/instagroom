@@ -84,7 +84,22 @@ class ViewController: UIViewController {
                 return
             }
             print("Successfully created user: ", result?.user.uid ?? "")
+            
+            
+            let usernames = ["username":login]
+            guard let uid = result?.user.uid else { return }
+            let values = [uid:usernames]
+            /// saving our users to firebase database
+            Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
+                if let error = err {
+                    print("Failed to save user info into DB", error)
+                    return
+                } else {
+                    print("Successfully saved user info into DB")
+                }
+            })
         }
+    
     }
     
     
