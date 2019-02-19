@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import UITextField_Shake
 
 class ViewController: UIViewController {
 
@@ -68,18 +69,28 @@ class ViewController: UIViewController {
         btn.setTitleColor(.white, for: .normal)
         
         btn.addTarget(self, action: #selector(handleSignUp), for: .touchUpInside)
-        btn.isEnabled = false
+        //btn.isEnabled = false
         return btn
     }()
     
     @objc func handleSignUp() {
         
-        guard let email = emailTextField.text, email.count > 0 else { return }
-        guard let login = usernameField.text, login.count > 0 else { return }
-        guard let pass = passwordField.text, pass.count > 0  else { return }
+        guard let email = emailTextField.text, email.count > 0 else {
+            emailTextField.shake()
+            return
+        }
+        guard let login = usernameField.text, login.count > 0 else {
+            usernameField.shake()
+            return
+        }
+        guard let pass = passwordField.text, pass.count > 0  else {
+            passwordField.shake()
+            return
+        }
         
         Auth.auth().createUser(withEmail: email, password: pass) { (result, error) in
             if let err = error {
+                // TODO: дернуть кнопку регистрации, чтобы показать, что произошла ошибка
                 print("error in signup occured: ", err)
                 return
             }
@@ -90,6 +101,7 @@ class ViewController: UIViewController {
             guard let uid = result?.user.uid else { return }
             let values = [uid:usernames]
             /// saving our users to firebase database
+//            let ref = Database.database().reference(fromURL: "https://instagroom-3a83d")
             Database.database().reference().child("users").updateChildValues(values, withCompletionBlock: { (err, ref) in
                 if let error = err {
                     print("Failed to save user info into DB", error)
@@ -113,7 +125,7 @@ class ViewController: UIViewController {
             submitBtn.isEnabled = true
             submitBtn.backgroundColor = UIColor.rgb(17, 154, 237)
         } else {
-            submitBtn.isEnabled = false
+//            submitBtn.isEnabled = false
             submitBtn.backgroundColor = UIColor.rgb(149, 204, 244)
         }
     }

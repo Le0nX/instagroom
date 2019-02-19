@@ -10,6 +10,10 @@ target 'Instagroom' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  
+  #animation pods
+  pod 'UITextField+Shake', '~> 1.2'
+  
 
   target 'InstagroomTests' do
     inherit! :search_paths
